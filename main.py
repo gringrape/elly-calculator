@@ -1,15 +1,21 @@
-def main():
-    num1 = int(input("첫 번째 숫자를 입력하세요: "))
-    num2 = int(input("두 번째 숫자를 입력하세요: "))
-    operation = input("사칙연산을 선택하세요 (+, -, *, / 중 하나를 입력): ")
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/')
+def calculator():
+    num1 = int(request.args.get('num1'))
+    num2 = int(request.args.get('num2'))
+    operation = request.args.get('operation')
 
     if operation == '+':
-        print(num1 + num2)
+        return str(num1 + num2)
     elif operation == '-':
-        print(num1 - num2)
+        return str(num1 - num2)
     elif operation == '*':
-        print(num1 * num2)
+        return str(num1 * num2)
     elif operation == '/':
-        print(num1 / num2)
+        return str(num1 / num2)
 
-main()
+if __name__ == '__main__':
+    app.run(debug=True)
