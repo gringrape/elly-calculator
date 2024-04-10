@@ -1,15 +1,20 @@
-def main():
-    num1 = int(input("첫 번째 숫자를 입력하세요: "))
-    num2 = int(input("두 번째 숫자를 입력하세요: "))
-    operation = input("사칙연산을 선택하세요 (+, -, *, / 중 하나를 입력): ")
+def calculator():
+    num1 = int(input('Enter the first number: '))
+    num2 = int(input('Enter the second number: '))
+    operation = input('Choose an arithmetic operation (+, -, *, /): ')
 
-    if operation == '+':
-        print(num1 + num2)
-    elif operation == '-':
-        print(num1 - num2)
-    elif operation == '*':
-        print(num1 * num2)
-    elif operation == '/':
-        print(num1 / num2)
+    operations = {
+        '+': lambda x, y: x + y,
+        '-': lambda x, y: x - y,
+        '*': lambda x, y: x * y,
+        '/': lambda x, y: x / y
+    }
 
-main()
+    if operation in operations:
+        result = operations[operation](num1, num2)
+        print('Result: ', result)
+    else:
+        print('Invalid operation')
+
+
+calculator()
