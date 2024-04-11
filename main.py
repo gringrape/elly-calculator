@@ -2,7 +2,7 @@ def main():
     # 사용자로부터 입력 받기
     num1 = int(input('첫 번째 숫자를 입력해주세요: '))
     num2 = int(input('두 번째 숫자를 입력해주세요: '))
-    operation = input('어떤 연산을 하시겠습니까? (+, -, *, /): ')
+    operation = input('어떤 연산을 하시겠습니까? (+, -, *, /, **): ')
     
     # 연산 실행
     if operation == '+':
@@ -17,6 +17,9 @@ def main():
     elif operation == '/':
         result = num1 / num2
         print('두 숫자의 나눗셈 결과는:', result)
+    elif operation == '**':
+        result = num1 ** num2
+        print('첫 번째 숫자를 두 번째 숫자로 제곱한 결과는:', result)
     else:
         print('잘못된 연산자 입력입니다.')
 
