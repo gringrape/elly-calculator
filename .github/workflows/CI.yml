@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  run-and-build-images:
+  code-validation:
     runs-on: ubuntu-latest
 
     steps:
