@@ -1,5 +1,2 @@
-def main():
-    print("hello, world")
-
-
-main()
+def add_numbers(a, b):
+    return a + b
