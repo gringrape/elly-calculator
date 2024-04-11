@@ -1,4 +1,4 @@
-def main():
+def calculator():
     num1 = int(input('첫 번째 숫자를 입력해주세요: '))
     num2 = int(input('두 번째 숫자를 입력해주세요: '))
     operation = input('어떤 연산을 하시겠습니까? (+, -, *, /): ')
@@ -17,4 +17,4 @@ def main():
     else:
         print('잘못된 연산자 입력입니다.')
 
-main()
+calculator()
