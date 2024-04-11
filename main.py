@@ -1,5 +1,7 @@
+import math
+
 def enhanced_calculator(a, b, operation):
-    valid_operations = ['+', '-', '*', '/']
+    valid_operations = ['+', '-', '*', '/', 'log']
     if operation not in valid_operations:
         raise ValueError('지원하지 않는 연산자입니다.')
     if operation == '+':
@@ -13,13 +15,18 @@ def enhanced_calculator(a, b, operation):
             return a / b
         else:
             raise ValueError('0으로 나눌 수 없습니다')
+    elif operation == 'log':
+        if b != 0:
+            return math.log10(a / b)
+        else:
+            raise ValueError('0으로 나눌 수 없습니다')
 
 if __name__ == '__main__':
     while True:
         num1 = int(input("첫 번째 숫자를 입력하세요: "))
         num2 = int(input("두 번째 숫자를 입력하세요: "))
-        operation = input("연산자를 입력하세요 (+, -, *, /): ")
-        if operation in ['+', '-', '*', '/']:
+        operation = input("연산자를 입력하세요 (+, -, *, /, log): ")
+        if operation in ['+', '-', '*', '/', 'log']:
             result = enhanced_calculator(num1, num2, operation)
             print("결과는", result)
             break
