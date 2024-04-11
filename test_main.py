@@ -1,4 +1,4 @@
-from main import add, multiply
+from main import add, multiply, divide
 
 def test_add_two_integers():
     assert add(2, 3) == 5, "Expected add(2, 3) to return 5"
@@ -23,3 +23,20 @@ def test_multiply_negative_numbers():
 
 def test_multiply_positive_negative():
     assert multiply(3, -2) == -6, "Expected multiply(3, -2) to return -6"
+
+def test_divide_two_integers():
+    assert divide(10, 2) == 5, "Expected divide(10, 2) to return 5"
+
+def test_divide_by_zero():
+    try:
+        divide(5, 0)
+    except ZeroDivisionError:
+        assert True
+    else:
+        assert False, "Expected ZeroDivisionError when dividing by zero"
+
+def test_divide_negative_numbers():
+    assert divide(-10, 2) == -5, "Expected divide(-10, 2) to return -5"
+
+def test_divide_positive_negative():
+    assert divide(10, -2) == -5, "Expected divide(10, -2) to return -5"
